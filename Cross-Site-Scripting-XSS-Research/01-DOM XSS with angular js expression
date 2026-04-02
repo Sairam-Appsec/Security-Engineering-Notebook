@@ -4,4 +4,14 @@ The thing is in Angular JS the expressions within the double {{}} will not be ex
 The input inside will go into the sandbox and as a result it wont execute.
 So, now I tried to break out of the sandbox.
 $on - This is the built in function for every scope
-.constructor - For every function
+.constructor - For every function in the javascript there is a constructor property and it will return the base function.
+('alert(1)'): Using base function constructor creating one new function.
+(): Created function will be executed immediately.
+{{}$on.constructor('alert(1)')()}
+
+I have tried the same thing on our bank application.
+But, everywhere in our application we have tied the input fields to the ng-modal.
+In ng-model the data will only be stored but not evaluate the expressions. It will escape the expressions.
+If we want it to execute in the application, this input directly needs to be evaluated in the html template
+or we can directly store it in {{}} from the ng-model.
+So, the attack was not successfull, but learnt the reasons behind it.
