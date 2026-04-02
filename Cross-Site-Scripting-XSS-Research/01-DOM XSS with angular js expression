@@ -1,1 +1,7 @@
-This angular js expression attack I have performed on our web application.
+We are using angular js version 1 for our application.
+So, I just wanted to try to perform the xss attack on our application using expressions.
+The thing is in Angular JS the expressions within the double {{}} will not be executed directly by the javascript.
+The input inside will go into the sandbox and as a result it wont execute.
+So, now I tried to break out of the sandbox.
+$on - This is the built in function for every scope
+.constructor - 
