@@ -15,3 +15,9 @@ In ng-model the data will only be stored but not evaluate the expressions. It wi
 If we want it to execute in the application, this input directly needs to be evaluated in the html template
 or we can directly store it in {{}} from the ng-model.
 So, the attack was not successfull, but learnt the reasons behind it.
+
+Status: The application is currently not susceptible to client-side template injection because of the current implementation.
+Security control: Data binding via ng-model acts as a primary defense by treating input as data, not executable code.
+
+Prevention tip: Avoid using functions like $eval() or directly injecting the payloads or user input into the html templates as they will escape the sandbox which will
+result in the xss attack.
