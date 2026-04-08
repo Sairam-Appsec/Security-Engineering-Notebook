@@ -1,1 +1,14 @@
+I have started research on DVWA application.
+When I try to visit the dom xss, that page was showing the dropdown with multiple options and i have selected one option, the option was showing in the browser url
+directly, So I have decided to perform the XSS there.
+To do that, I have first visited the page source and confirmed that the response is not coming from the server.
+<img width="1919" height="781" alt="Image" src="https://github.com/user-attachments/assets/307ea135-87f1-4a47-a95c-32dc6bea0600" />
+Developer clearly wrote the logic here that he is taking the input directly from the user and assigning to lang without any validation
+<img width="1078" height="769" alt="Image" src="https://github.com/user-attachments/assets/5930451e-a2d4-4cd4-a273-637d4ff8b013" />
+So, I have tried script and got the cookie. There are no flags also for the cookie, we can send to our own domain.
+<img width="1815" height="563" alt="Image" src="https://github.com/user-attachments/assets/1a143bd6-8fac-4f87-89d8-284cd2c4c90f" />
 
+Remidiation:
+Here we need to sanitize the input from the user, this is the first shield. Before passing the input to document.write validate the user input.
+There is on CSP header for stopping the js to read the sensitive data like cookie. Need to implement that.
+There are no flags for the cookie as well. Need to attach the secure and http flags to the cookie.
