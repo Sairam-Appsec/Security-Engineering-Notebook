@@ -10,3 +10,4 @@ We know that with the Inconsistent normalization, there is a possiblity for the 
 filtering the custom configured headers at the load balancer level.
 
 This reasearch helped in understanding the real issues of inconsistent normalization.
+ 
